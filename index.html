@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connectech 2025-26 Registration</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #111820;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 20px #00ffcc33;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #00ffe7;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    #successBox {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #1e2a33;
+      box-shadow: 0 0 10px #00ffd5aa;
+    }
+    .prizeBox {
+      background: #0f1b26;
+      border: 1px solid #00ffcc88;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+    .prizeBox h3 {
+      color: #00ffe7;
+      margin: 0 0 10px;
+    }
+    .eventList {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+    button {
+      background: #00ffe7;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00bfa1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Connectech 2025 - 2026 Registration</h1>
+    
+    <iframe id="formFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScFbWY1zYH2-NXyoPMfP58-UcMcQa4fy3RKGPbmSTQc5GM1sA/viewform?embedded=true"></iframe>
+    
+    <div id="successBox">
+      <h2>✅ Form Submitted Successfully!</h2>
+      <p>Thank you for registering for <strong>Connectech 2025-2026</strong>.</p>
+
+      <div class="prizeBox">
+        <h3>🎁 Prize Money</h3>
+        <ul class="eventList">
+          <li>First Prize – ₹7,000/-</li>
+          <li>Second Prize – ₹4,000/-</li>
+          <li>Third Prize – ₹3,000/-</li>
+        </ul>
+      </div>
+
+      <div class="prizeBox">
+        <h3>📌 Events in Bonanza</h3>
+        <ul class="eventList">
+          <li>• Nirmana (Model Competition)</li>
+          <li>• TechArt (Technical Drawing Competition)</li>
+          <li>• Pythagoras Star (Math Aptitude – Class 9 & 10)</li>
+          <li>• Pythagoras Pro (Math Aptitude – Class 11 & 12)</li>
+          <li>• BioQuiz (Biology Quiz – Class 11 & 12)</li>
+          <li>• Qrosity (General Quiz – Class 9 to 12)</li>
+        </ul>
+      </div>
+
+      <button onclick="location.reload()">Register Another</button>
+    </div>
+  </div>
+
+  <script>
+    const formFrame = document.getElementById("formFrame");
+    const successBox = document.getElementById("successBox");
+
+    // Monitor iframe for submission redirect (Google Forms usually redirects to "formResponse")
+    formFrame.onload = function () {
+      const src = formFrame.contentWindow.location.href;
+      if (src.includes("formResponse")) {
+        formFrame.style.display = "none";
+        successBox.style.display = "block";
+      }
+    };
+  </script>
+</body>
+</html>
